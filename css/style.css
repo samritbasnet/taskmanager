@@ -44,3 +44,45 @@ header h1 {
   align-items: center;
   justify-content: center;
 }
+.task-manager {
+  max-width: 50rem;
+  width: 100%;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  -webkit-backdrop-filter: blur(10px);
+}
+.task-input-section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+}
+.task-form {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.task-input {
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  border: 2px solid #3498db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+.add-task-button {
+  background: #3498db;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
