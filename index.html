@@ -11,54 +11,108 @@
       <button id="theme-toggle">🌙</button>
     </header>
     <main class="task-manager">
-      <!-- Section 1 -Task input form -->
-      <section class="task-input-section">
-        <form class="task-form">
+      <!-- Section 1 - Task input form -->
+      <section class="task-input-section" aria-label="Add new task">
+        <form class="task-form" id="taskForm" aria-label="Add new task">
           <input
             type="text"
             class="task-input"
+            id="taskInput"
             placeholder="Add a new task"
             required
+            aria-label="Task description"
           />
-          <button type="submit" class="add-task-button">Add</button>
+          <button type="submit" class="add-task-button" aria-label="Add task">
+            Add
+          </button>
         </form>
-        <!-- Task List Container -->
+      </section>
+
+      <!-- Section 2 - Task List Container -->
+      <section class="task-list-section" aria-label="Task list">
         <div class="task-list-container">
           <h2>Task List</h2>
-          <ul class="task-list">
-            <li class="task-item">
+          <ul class="task-list" id="taskList">
+            <li class="task-item" data-task-id="1">
               <input type="checkbox" class="task-checkbox" />
               <span class="task-text">Go to the gym</span>
               <div class="task-actions">
-                <button class="edit-btn">✏️</button>
-                <button class="delete-btn">🗑️</button>
+                <button class="edit-btn" title="Edit task">✏️</button>
+                <button class="delete-btn" title="Delete task">🗑️</button>
               </div>
             </li>
-            <li class="task-item">
+            <li class="task-item" data-task-id="2">
               <input type="checkbox" class="task-checkbox" />
               <span class="task-text">Buy groceries</span>
               <div class="task-actions">
-                <button class="edit-btn">✏️</button>
-                <button class="delete-btn">🗑️</button>
+                <button class="edit-btn" title="Edit task">✏️</button>
+                <button class="delete-btn" title="Delete task">🗑️</button>
               </div>
             </li>
-            <li class="task-item">
+            <li class="task-item" data-task-id="3">
               <input type="checkbox" class="task-checkbox" />
               <span class="task-text">Read a book</span>
               <div class="task-actions">
-                <button class="edit-btn">✏️</button>
-                <button class="delete-btn">🗑️</button>
+                <button class="edit-btn" title="Edit task">✏️</button>
+                <button class="delete-btn" title="Delete task">🗑️</button>
               </div>
             </li>
-            <li class="task-item">
+            <li class="task-item" data-task-id="4">
               <input type="checkbox" class="task-checkbox" />
               <span class="task-text">Go for Walk</span>
               <div class="task-actions">
-                <button class="edit-btn">✏️</button>
-                <button class="delete-btn">🗑️</button>
+                <button class="edit-btn" title="Edit task">✏️</button>
+                <button class="delete-btn" title="Delete task">🗑️</button>
               </div>
             </li>
           </ul>
+
+          <!-- Empty State -->
+          <div class="empty-state" id="emptyState" style="display: none">
+            <div class="empty-icon">📝</div>
+            <h3>No tasks yet!</h3>
+            <p>Add your first task to get started</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3 - Task Controls -->
+      <section class="task-controls-section" aria-label="Task controls">
+        <div class="task-controls">
+          <div class="task-stats">
+            <span class="task-counter" role="status" aria-live="polite"
+              >4 tasks remaining</span
+            >
+          </div>
+          <div class="task-filters" role="group" aria-label="Filter tasks">
+            <button
+              class="filter-btn active"
+              data-filter="all"
+              aria-pressed="true"
+            >
+              All
+            </button>
+            <button
+              class="filter-btn"
+              data-filter="active"
+              aria-pressed="false"
+            >
+              Active
+            </button>
+            <button
+              class="filter-btn"
+              data-filter="completed"
+              aria-pressed="false"
+            >
+              Completed
+            </button>
+          </div>
+          <button
+            class="clear-completed-btn"
+            aria-label="Clear completed tasks"
+          >
+            Clear Completed
+          </button>
         </div>
       </section>
     </main>
