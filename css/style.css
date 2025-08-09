@@ -86,3 +86,22 @@ header h1 {
   cursor: pointer;
   transition: all 0.3s ease;
 }
+.add-task-button:hover {
+  background: linear-gradient(135deg, #2980b9, #1f5f8b);
+  transform: translateY(-2px);
+  box-shadow: 0 0.25rem 0.75rem rgba(52, 152, 219, 0.3);
+}
+.task-list-section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+}
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+.task-item:last-child {
+  border-bottom: none;
+}
