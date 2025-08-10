@@ -100,8 +100,32 @@ header h1 {
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
+  margin-bottom: 0.75rem;
+  background: rgb(255, 255, 255, 0.8);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(52, 152, 219, 0.2);
   border-bottom: 1px solid #e0e0e0;
 }
 .task-item:last-child {
-  border-bottom: none;
+  margin-bottom: 0;
+}
+.task-controls-section {
+  padding: 1.5rem;
+  border-top: 1px solid rgba(52, 152, 219, 0.2);
+}
+.task-counter {
+  font-size: 1rem;
+  color: #64748b;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+.task-filters {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+.filter-btn {
+  background: none;
+  border: 2px solid #3498db;
+  border-radius: 0.5rem;
 }
