@@ -4,10 +4,12 @@ const taskList = document.getElementById("taskList");
 
 let tasks = [];
 let currentFilter = "all"; // Track current filter
+let currentTheme = localStorage.getItem("theme") || "light"; // Track current theme
 
 const taskCounter = document.querySelector(".task-counter");
 const filterButtons = document.querySelectorAll(".filter-btn");
 const clearCompletedBtn = document.querySelector(".clear-completed-btn");
+const themeToggle = document.getElementById("theme-toggle");
 
 renderTasks();
 updateTaskCounter();
@@ -23,6 +25,12 @@ filterButtons.forEach((btn) => {
 
 // Add clear completed event listener
 clearCompletedBtn.addEventListener("click", clearCompletedTasks);
+
+// Add theme toggle event listener
+themeToggle.addEventListener("click", toggleTheme);
+
+// Initialize theme
+initializeTheme();
 
 function handleTaskSubmit(e) {
   e.preventDefault();
@@ -208,4 +216,21 @@ function clearCompletedTasks() {
   updateTaskCounter();
 
   console.log("Cleared completed tasks");
+}
+
+// Theme functions
+function initializeTheme() {
+  document.documentElement.setAttribute("data-theme", currentTheme);
+  updateThemeIcon();
+}
+
+function toggleTheme() {
+  currentTheme = currentTheme === "light" ? "dark" : "light";
+  document.documentElement.setAttribute("data-theme", currentTheme);
+  localStorage.setItem("theme", currentTheme);
+  updateThemeIcon();
+}
+
+function updateThemeIcon() {
+  themeToggle.textContent = currentTheme === "light" ? "🌙" : "☀️";
 }
