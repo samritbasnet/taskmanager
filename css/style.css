@@ -154,3 +154,74 @@ header h1 {
 .clear-completed-btn:hover {
   background: #c0392b;
 }
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  /* Tablet and smaller */
+  .task-manager {
+    max-width: 95%;
+    padding: 1rem;
+  }
+
+  header {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .task-input-section,
+  .task-list-section,
+  .task-controls-section {
+    padding: 1rem;
+  }
+
+  .task-form {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .task-input {
+    width: 100%;
+  }
+
+  .add-task-button {
+    width: 100%;
+  }
+
+  .task-filters {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .filter-btn {
+    flex: 1;
+    min-width: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Mobile phones */
+  body {
+    padding: 10px;
+  }
+
+  .task-manager {
+    max-width: 100%;
+    padding: 0.75rem;
+  }
+
+  header h1 {
+    font-size: 1.75rem;
+  }
+
+  .task-item {
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .task-actions {
+    gap: 0.5rem;
+  }
+}
