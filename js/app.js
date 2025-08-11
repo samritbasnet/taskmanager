@@ -3,9 +3,26 @@ const taskInput = document.getElementById("taskInput");
 const taskList = document.getElementById("taskList");
 
 let tasks = [];
+let currentFilter = "all"; // Track current filter
+
 const taskCounter = document.querySelector(".task-counter");
+const filterButtons = document.querySelectorAll(".filter-btn");
+const clearCompletedBtn = document.querySelector(".clear-completed-btn");
+
+renderTasks();
 updateTaskCounter();
 taskForm.addEventListener("submit", handleTaskSubmit);
+
+// Add filter event listeners
+filterButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const filter = btn.getAttribute("data-filter");
+    setFilter(filter);
+  });
+});
+
+// Add clear completed event listener
+clearCompletedBtn.addEventListener("click", clearCompletedTasks);
 
 function handleTaskSubmit(e) {
   e.preventDefault();
@@ -24,7 +41,7 @@ function handleTaskSubmit(e) {
 
   // Add to tasks array
   tasks.push(newTask);
-  displayTask(newTask);
+  renderTasks();
   updateTaskCounter();
   console.log("Adding task:", taskText);
   console.log("Task object:", newTask);
@@ -74,6 +91,7 @@ function toggleTask(taskId) {
 
     console.log("Task toggled:", task);
   }
+  renderTasks();
   updateTaskCounter();
 }
 function deleteTask(taskId) {
@@ -85,6 +103,7 @@ function deleteTask(taskId) {
 
   console.log("Task deleted:", taskId);
   console.log("Remaining tasks:", tasks);
+  renderTasks();
   updateTaskCounter();
 }
 function updateTaskCounter() {
@@ -133,4 +152,60 @@ function saveEdit(taskId, newText) {
     taskText.style.display = "inline";
     input.remove();
   }
+}
+
+// Filter functions
+function setFilter(filter) {
+  currentFilter = filter;
+
+  // Update active button
+  filterButtons.forEach((btn) => {
+    btn.classList.remove("active");
+    btn.setAttribute("aria-pressed", "false");
+  });
+
+  const activeBtn = document.querySelector(`[data-filter="${filter}"]`);
+  activeBtn.classList.add("active");
+  activeBtn.setAttribute("aria-pressed", "true");
+
+  // Re-render tasks with filter
+  renderTasks();
+}
+
+function renderTasks() {
+  // Clear current list
+  taskList.innerHTML = "";
+
+  // Filter tasks based on current filter
+  let filteredTasks = tasks;
+
+  if (currentFilter === "active") {
+    filteredTasks = tasks.filter((task) => !task.completed);
+  } else if (currentFilter === "completed") {
+    filteredTasks = tasks.filter((task) => task.completed);
+  }
+
+  // Display filtered tasks
+  filteredTasks.forEach((task) => {
+    displayTask(task);
+  });
+
+  // Show/hide empty state
+  const emptyState = document.getElementById("emptyState");
+  if (filteredTasks.length === 0) {
+    emptyState.style.display = "block";
+  } else {
+    emptyState.style.display = "none";
+  }
+}
+
+function clearCompletedTasks() {
+  // Remove completed tasks from array
+  tasks = tasks.filter((task) => !task.completed);
+
+  // Re-render tasks
+  renderTasks();
+  updateTaskCounter();
+
+  console.log("Cleared completed tasks");
 }

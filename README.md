@@ -17,7 +17,7 @@ A modern, responsive task management application built with vanilla JavaScript, 
 
 ## 🚀 Live Demo
 
-**[View Live Demo](https://your-vercel-url.vercel.app)** *(Replace with your actual Vercel URL)*
+**[View Live Demo](https://task-manager-app-xyz.vercel.app)** _(Replace with your actual Vercel URL from Vercel)_
 
 ## 🛠️ Technologies Used
 
@@ -45,12 +45,14 @@ taskmanager/
 ## 🎯 Core Functionality
 
 ### Task Management
+
 - **Create**: Add new tasks with validation
 - **Read**: Display tasks with completion status
 - **Update**: Edit task text inline
 - **Delete**: Remove tasks permanently
 
 ### User Experience
+
 - **Visual Feedback**: Strikethrough for completed tasks
 - **Real-time Updates**: Counter updates instantly
 - **Smooth Interactions**: Hover effects and transitions
@@ -59,17 +61,20 @@ taskmanager/
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - A modern web browser (Chrome, Firefox, Safari, Edge)
 - No additional software required!
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/samritbasnet/taskmanager.git
    ```
 
 2. **Navigate to the project**
+
    ```bash
    cd taskmanager
    ```
@@ -85,22 +90,26 @@ taskmanager/
 ## 💻 Usage
 
 ### Adding Tasks
+
 1. Type your task in the input field
 2. Press Enter or click "Add"
 3. Your task appears in the list
 
 ### Managing Tasks
+
 - **Complete**: Click the checkbox to mark as done
 - **Edit**: Click the ✏️ button to modify text
 - **Delete**: Click the 🗑️ button to remove
 
 ### Task Counter
+
 - Shows how many tasks are remaining
 - Updates automatically as you complete tasks
 
 ## 🔧 Development
 
 ### Local Development
+
 ```bash
 # Start a local server
 python -m http.server 8000
@@ -112,6 +121,7 @@ npx serve .
 ```
 
 ### Code Structure
+
 - **`app.js`**: Main JavaScript logic
   - Task CRUD operations
   - Event listeners
@@ -121,11 +131,13 @@ npx serve .
 ## 🎨 Customization
 
 ### Styling
+
 - Modify `css/style.css` to change colors, fonts, and layout
 - Uses CSS custom properties for easy theming
 - Responsive design with mobile-first approach
 
 ### Functionality
+
 - Extend `js/app.js` to add new features
 - Well-commented code for easy modification
 - Modular function structure
