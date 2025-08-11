@@ -17,7 +17,7 @@ A modern, responsive task management application built with vanilla JavaScript, 
 
 ## 🚀 Live Demo
 
-**[View Live Demo](https://task-manager-app-xyz.vercel.app)** _(Replace with your actual Vercel URL from Vercel)_
+**[View Live Demo](https://taskmanager-nu4mqu1w4-samritbasnets-projects.vercel.app/)**
 
 ## 🛠️ Technologies Used
 
@@ -174,6 +174,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Samrit Basnet** - [GitHub](https://github.com/samritbasnet)
 
 Project Link: [https://github.com/samritbasnet/taskmanager](https://github.com/samritbasnet/taskmanager)
+
+Live Demo: [https://taskmanager-nu4mqu1w4-samritbasnets-projects.vercel.app/](https://taskmanager-nu4mqu1w4-samritbasnets-projects.vercel.app/)
 
 ---
 
